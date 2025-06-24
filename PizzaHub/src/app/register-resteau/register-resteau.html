@@ -1,0 +1,17 @@
+<h1>تسجيل مطعم جديد</h1>
+<form (submit)="registerRestaurant()">
+  <label>اسم المطعم</label>
+  <input type="text" [(ngModel)]="restaurant.name"  placeholder="pizzafood" required>
+
+  <label>البريد الإلكتروني</label>
+  <input type="email" [(ngModel)]="restaurant.email" placeholder="example@gmail.com" required>
+
+  <label>كلمة المرور</label>
+  <input type="password" [(ngModel)]="restaurant.password" placeholder="password" required>
+
+  <label>العنوان</label>
+  <input type="text" [(ngModel)]="restaurant.address" placeholder="alger ...">
+
+  <button type="submit">تسجيل</button>
+</form>
+

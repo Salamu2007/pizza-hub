@@ -1,0 +1,48 @@
+<h2>👥 إدارة العمال</h2>
+
+<form (ngSubmit)="addWorker()" #workerForm="ngForm">
+  <div class="form-group">
+    <label>الاسم الكامل</label>
+    <input type="text" name="name" [(ngModel)]="newWorker.name" required />
+  </div>
+
+  <div class="form-group">
+    <label>البريد الإلكتروني</label>
+    <input type="email" name="email" [(ngModel)]="newWorker.email" required />
+  </div>
+
+  <div class="form-group">
+    <label>الدور</label>
+    <select name="role" [(ngModel)]="newWorker.role" required>
+      <option value="">اختر الدور</option>
+      <option>نادل</option>
+      <option>طباخ</option>
+      <option>مدير مساعد</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="!workerForm.valid">➕ إضافة عامل</button>
+</form>
+
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th>الاسم</th>
+      <th>البريد</th>
+      <th>الدور</th>
+      <th>الحالة</th>
+      <th>حذف</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let worker of workers; let i = index">
+      <td>{{ worker.name }}</td>
+      <td>{{ worker.email }}</td>
+      <td>{{ worker.role }}</td>
+      <td>{{ worker.active ? '✅ نشط' : '❌ موقوف' }}</td>
+      <td><button (click)="deleteWorker(i)">🗑️</button></td>
+    </tr>
+  </tbody>
+</table>

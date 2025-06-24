@@ -1,0 +1,30 @@
+.sidebar {
+  background-color: #1f1f1f;
+  color: white;
+  width: 220px;
+  position: fixed;
+  top: 70px; /* أسفل الهيدر */
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li {
+  margin: 20px 0;
+}
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+.sidebar ul li a:hover {
+  background-color: #ff4d00;
+}

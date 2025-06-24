@@ -1,0 +1,31 @@
+<div class="orders-container">
+  <h2>📦 قائمة الطلبات</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>رقم الطلب</th>
+        <th>الزبون</th>
+        <th>نوع البيتزا</th>
+        <th>السعر</th>
+        <th>الحالة</th>
+        <th>إجراءات</th> <!-- عمود جديد -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>#{{order.id}}</td>
+        <td>{{order.customer}}</td>
+        <td>{{order.pizza}}</td>
+        <td>{{order.price}} DA</td>
+        <td>
+          <span>{{ order.status }}</span>
+        </td>
+        <td>
+          <span class="status {{ order.status }}">{{ getStatusLabel(order.status) }}</span>
+          <button *ngIf="order.status !== 'paid'" (click)="nextStatus(order)">➡️ التالي</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

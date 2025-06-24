@@ -1,0 +1,90 @@
+.orders-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.orders-container h2 {
+  margin-bottom: 20px;
+  color: #ff4d00;text-align: right;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  direction: rtl;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #ff4d00;
+  color: white;
+}
+
+tbody tr:hover {
+  background-color: #fbeee0;
+}
+
+span.completed {
+  background-color: #28a745;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+span.pending {
+  background-color: #ffc107;
+  color: #000;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+span.cancelled {
+  background-color: #dc3545;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.btn {
+  padding: 6px 10px;
+  margin: 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-size: 13px;
+}
+
+.btn.confirm {
+  background-color: #0275d8; /* أزرق */
+}
+
+.btn.accept {
+  background-color: #5cb85c; /* أخضر */
+}
+
+.btn.delete {
+  background-color: #d9534f; /* أحمر */
+}
+td span.done {
+  color: green;
+  font-weight: bold;
+}
+.status {
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.status.pending { background-color: #f39c12; }     /* برتقالي */
+.status.confirmed { background-color: #2980b9; }    /* أزرق */
+.status.delivering { background-color: #8e44ad; }   /* بنفسجي */
+.status.delivered { background-color: #27ae60; }    /* أخضر */
+.status.paid { background-color: #2ecc71; }         /* أخضر فاتح */

@@ -1,0 +1,26 @@
+<div class="products-container">
+  <h2>🍕 إدارة المنتجات</h2>
+
+  <!-- النموذج -->
+  <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+    <input type="text" [(ngModel)]="newProduct.name" name="name" placeholder="اسم البيتزا" required>
+    <input type="text" [(ngModel)]="newProduct.description" name="description" placeholder="الوصف" required>
+    <input type="number" [(ngModel)]="newProduct.price" name="price" placeholder="السعر" required>
+    <input type="text" [(ngModel)]="newProduct.image" name="image" placeholder="رابط الصورة" required>
+    <button type="submit">{{ editMode ? 'تعديل' : 'إضافة' }}</button>
+  </form>
+
+  <!-- عرض المنتجات -->
+  <div class="product-grid">
+    <div class="card" *ngFor="let product of products; let i = index">
+      <img [src]="product.image" alt="صورة البيتزا" />
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <div class="price">{{ product.price }} دج</div>
+      <button (click)="editProduct(i)">تعديل</button>
+      <button (click)="deleteProduct(i)">حذف</button>
+    </div>
+  </div>
+</div>
+
+

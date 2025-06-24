@@ -1,0 +1,38 @@
+<div class="login-container">
+  <h2>تسجيل الدخول</h2>
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    
+    <label for="email">البريد الإلكتروني:</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      [(ngModel)]="email"
+      required
+      email
+      #emailRef="ngModel"
+      [class.invalid]="emailRef.invalid && emailRef.touched"
+    />
+    <div class="error" *ngIf="emailRef.invalid && emailRef.touched">
+      البريد الإلكتروني غير صالح
+    </div>
+
+    <label for="password">كلمة المرور:</label>
+    <input
+      id="password"
+      name="password"
+      type="password"
+      [(ngModel)]="password"
+      required
+      #passRef="ngModel"
+      [class.invalid]="passRef.invalid && passRef.touched"
+    />
+    <div class="error" *ngIf="passRef.invalid && passRef.touched">
+      كلمة المرور مطلوبة ويجب أن تحتوي على 4 أحرف على الأقل
+    </div>
+
+    <button type="submit">دخول</button>
+  </form>
+</div>
+
+
