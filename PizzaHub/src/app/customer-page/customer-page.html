@@ -1,0 +1,54 @@
+<div class="customer-container">
+  <h2>🍕 مرحبًا! اختر البيتزا التي تحبها</h2>
+
+  <div class="products">
+    <div class="card" *ngFor="let product of products">
+      <img [src]="product.image" alt="صورة البيتزا" />
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <div class="price">{{ product.price }} دج</div>
+      <button (click)="addToCart(product)">🛒 شراء</button>
+    </div>
+  </div>
+
+  <div *ngIf="cart.length > 0" class="cart">
+    <h3>🧾 قائمة مشترياتك:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>المنتج</th>
+          <th>الكمية</th>
+          <th>السعر</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cart">
+          <td>{{ item.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price * item.quantity }} دج</td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="cart.length > 0" class="cart">
+  <!-- ... جدول المشتريات ... -->
+
+  <div class="total">💰 المجموع: {{ getTotal() }} دج</div>
+  <button class="confirm-btn" (click)="showConfirm = true">✅ تأكيد الطلب</button>
+</div>
+
+    <!-- واجهة تأكيد الطلب -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+    <div class="confirm-popup" *ngIf="showConfirm">
+      <div class="popup-content">
+        <h3>📋 تأكيد الطلب</h3>
+        <label>👤 اسمك:</label>
+        <input type="text" [(ngModel)]="customerInfo.name" />
+        
+        <label>📍 عنوان التوصيل:</label>
+        <input type="text" [(ngModel)]="customerInfo.address" />
+        
+        <button (click)="confirmOrder()"  style="margin: 10px;">📦 تأكيد</button>
+        <button class="cancel" (click)="showConfirm = false" style="margin: 10px;">❌ إلغاء</button>
+      </div>
+    </div>
+  </div>
+</div>

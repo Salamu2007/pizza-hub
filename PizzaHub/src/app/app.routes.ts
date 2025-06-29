@@ -5,6 +5,7 @@ import { RegisterResteau } from './register-resteau/register-resteau';
 import { LoginResteau } from './login-resteau/login-resteau';
 import { Workers } from './workers/workers';
 import { Homemanager } from './homemanager/homemanager';
+import { CustomerPage } from './customer-page/customer-page';
 
 export const routes: Routes = [
   { path: 'orders', component: Orders },
@@ -13,5 +14,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginResteau },
   { path: 'workers', component: Workers},
   { path: 'homeManager', component: Homemanager},
+  { path: 'customerpage', component:CustomerPage},
   { path: '', redirectTo: '/register', pathMatch: 'full' } // خيار إضافي جيد كبداية
 ];
+
